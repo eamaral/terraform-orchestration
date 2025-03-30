@@ -12,20 +12,33 @@ Este repositório contém os scripts de automação responsáveis por **orquestr
 
 ---
 
-## 📂 Estrutura Esperada
+## Clonando os módulos Terraform
 
-Este repositório assume que os seguintes repositórios (ou subdiretórios) estejam clonados no mesmo nível:
+Este repositório orquestra a infraestrutura com base em múltiplos módulos separados. Antes de rodar os scripts `apply-all.sh` e `destroy-all.sh`, clone os módulos abaixo no mesmo diretório raiz:
+
+```bash
+git clone https://github.com/eamaral/network-terraform.git
+git clone https://github.com/eamaral/alb-terraform.git
+git clone https://github.com/eamaral/cognito-terraform.git
+git clone https://github.com/eamaral/ecs-terraform.git
+git clone https://github.com/eamaral/db-terraform.git
+git clone https://github.com/eamaral/api-gateway-terraform.git
+```
+
+Garanta que as pastas fiquem organizadas assim:
 
 ```
-.
-├── terraform-orchestration
-├── network-terraform
-├── alb-terraform
-├── cognito-terraform
-├── ecs-terraform
-├── db-terraform
-├── api-gateway-terraform
+terraform-orchestration/
+├── apply-all.sh
+├── destroy-all.sh
+├── network-terraform/
+├── alb-terraform/
+├── cognito-terraform/
+├── ecs-terraform/
+├── db-terraform/
+├── api-gateway-terraform/
 ```
+
 
 ---
 
